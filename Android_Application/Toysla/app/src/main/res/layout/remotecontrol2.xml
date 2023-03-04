@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityRC">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#34EDD8D9"
+        android:scrollbarTrackVertical="@drawable/exit"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-48dp">
+
+
+        <ImageButton
+            android:id="@+id/exitbtn"
+            android:layout_width="77dp"
+            android:layout_height="75dp"
+            android:background="#F5F0F0"
+            android:scaleType="fitStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.946"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.975"
+            app:srcCompat="@drawable/exit" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="383dp"
+            android:layout_height="446dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.719">
+
+            <ImageButton
+                android:id="@+id/upbtn"
+                style="@android:style/Widget.DeviceDefault.Light.ImageButton"
+                android:layout_width="130dp"
+                android:layout_height="121dp"
+                android:adjustViewBounds="true"
+                android:background="#F5F0F0"
+                android:cropToPadding="true"
+                android:scaleType="fitStart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.458"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.16"
+                app:srcCompat="@drawable/up" />
+
+            <ImageButton
+                android:id="@+id/leftbtn"
+                android:layout_width="116dp"
+                android:layout_height="116dp"
+                android:background="#F5F0F0"
+                android:scaleType="fitStart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.456"
+                app:srcCompat="@drawable/left" />
+
+            <ImageButton
+                android:id="@+id/downbtn"
+                android:layout_width="138dp"
+                android:layout_height="118dp"
+                android:layout_marginTop="208dp"
+                android:background="#F5F0F0"
+                android:scaleType="fitStart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.473"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.683"
+                app:srcCompat="@drawable/down" />
+
+            <ImageButton
+                android:id="@+id/rightbtn"
+                style="@android:style/Widget.DeviceDefault.ImageButton"
+                android:layout_width="124dp"
+                android:layout_height="134dp"
+                android:background="#F5F0F0"
+                android:scaleType="fitStart"
+                android:src="@drawable/right"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.938"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/right"
+                tools:srcCompat="@drawable/right" />
+
+            <ImageButton
+                android:id="@+id/stopbtn"
+                android:layout_width="92dp"
+                android:layout_height="98dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.467"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/btn_dialog" />
+
+            <TextView
+                android:id="@+id/IdBufferIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data:"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="69dp"
+                tools:layout_editor_absoluteY="28dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Switch
+            android:id="@+id/gpssw"
+            android:layout_width="87dp"
+            android:layout_height="32dp"
+            android:text="GPS"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.049"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.197" />
+
+        <Button
+            android:id="@+id/startbtn"
+            style="@android:style/Widget.Material.Light.Button.Small"
+            android:layout_width="65dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="START"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gpssw"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <Button
+            android:id="@+id/savebtn"
+            style="@android:style/Widget.Material.Light.Button.Small"
+            android:layout_width="63dp"
+            android:layout_height="41dp"
+            android:text="SAVE"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.029"
+            app:layout_constraintStart_toEndOf="@+id/startbtn"
+            app:layout_constraintTop_toBottomOf="@+id/gpssw"
+            app:layout_constraintVertical_bias="0.208" />
+
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_width="132dp"
+            android:layout_height="106dp"
+            android:checkedButton="@id/softbtn"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.942"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.333">
+
+            <RadioButton
+                android:id="@+id/softbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Soft mode" />
+
+            <RadioButton
+                android:id="@+id/normalbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Normal mode" />
+
+            <Button
+                android:id="@+id/playbtn"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_width="94dp"
+                android:layout_height="37dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Save"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#34EDD8D9"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/presstostart"
+        style="@android:style/Widget.Holo.Button.Toggle"
+        android:layout_width="111dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="141dp"
+        android:background="#FFFFFF"
+        android:text="Press to start"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#161515"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.79" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="348dp"
+        android:layout_height="277dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="140dp"
+        android:adjustViewBounds="false"
+        app:layout_constraintBottom_toTopOf="@+id/presstostart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/toysla"
+        tools:srcCompat="@drawable/toysla" />
+</androidx.constraintlayout.widget.ConstraintLayout>
