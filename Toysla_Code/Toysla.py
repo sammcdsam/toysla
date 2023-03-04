@@ -41,8 +41,6 @@ geofence_point_counter = 0
 pwm_freq = 100                  # pwm frequency is 100Hz                               
 a_mode = "normal"                 # Set acceleration mode to "normal" start or modified "soft" start
 
-# WHERE ARE WE GETTING THIS VALUE INPUT FROM - read the comments, don't be a dick
-#not being a dick, there was just no input for the pedal state. You said its the pedal state but where was the pedal read coming from
 sig = 0                         # Pedal State: Pressed = 1, Not Pressed = 0 
 dc0 = 0                         # driver motors
 dc1 = 60                        # steering motor
@@ -76,10 +74,7 @@ prev_time = time.monotonic()    # record the time for acceleration controls.
 car_forward = False
 car_backward = False
 
-# Sam changed this to a "Global" while loop so that way we dont have to copy
-# the bluetooth and gps code.
 current_time = time.monotonic()
-
 
 try:
     while True:
@@ -89,26 +84,19 @@ try:
         print(forward_collision)
         print(backward_collision)
         time.sleep(.2)
+        
         try:
             data = client_socket.recv(1024)
             data = data.decode("utf-8").lower()
             if len(data) == 0:
                 print("no data")
             print("Received: ", data)
+        
         except bluetooth.btcommon.BluetoothError as ex:
             if(ord(ex.args[0][1]) + ord(ex.args[0][2]) == 98):
                 if data == 'l' or data == 'r' or data == 'v':
                     data = ''
-            else:
-                try:
-                    client_socket,address = server_socket.accept()
-                    client_socket.setblocking(0)
-                    print("HELLO")
-                except any as dumbass:
-                    print(ex)
-                    print(dumbass)
-                    break
-        
+
         
         gps.update()                                    # update the gps location
         
@@ -138,13 +126,9 @@ try:
         else:
             infence = True
 
-
+        # if not in the geofence, stop the car
         if not infence:
             data = 's'
-                        
-        # ??????? so the remote control only works when the child is pressing the pedal?????? - yup, that's the plan
-                        # While the pedal is pressed
-
             
         if(data == "f" or sig == 1):
             print("THE CAR MOVES FORWARD")
@@ -172,11 +156,10 @@ try:
                 car_forward= False
                 car_backward = False
                 dc0 = 0
-                pwm0.stop() # would it be better to do pwm0.ChangeDutyCycle(0)
+                pwm0.stop() # would it be better to do pwm0.ChangeDutyCycle(0)?
                 pwm1.stop() 
                  
                     
-
         elif(data == "b" or sig == 1):
             print("THE CAR MOVES BACKWARD")
             if not backward_collision:
